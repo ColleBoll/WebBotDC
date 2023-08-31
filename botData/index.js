@@ -10,8 +10,24 @@ const client = new Client({
         ],
     partials: [Partials.Channel],
 });
-const botConfig = require("./botConfig.json");
 const fs = require("node:fs");
+const config = require('./config.json');
+
+// var tokenData;
+// var statusData;
+// fetch('./config.json')
+//     .then(response => response.json())
+//     .then(data => {
+
+//         tokenData = data[0].token;
+//         statusData = data[0].status;
+        
+//         console.log("Token:", tokenData);
+//         console.log("Status:", statusData);
+//     })
+//     .catch(error => {
+//         console.error('Fout bij het ophalen van JSON: ', error);
+//     });
 
 client.commands = new Discord.Collection()
 client.slashCommands = new Discord.Collection();
@@ -32,7 +48,7 @@ client.on("ready", async () => {
 
     console.log(`${client.user.username} is online`);
 
-    client.user.setActivity("status", {type: ActivityType.Playing});
+    client.user.setActivity(config[0].status, {type: ActivityType.Playing});
 
 });
 
@@ -40,7 +56,7 @@ client.once("ready", () => {
 
     let clientId = "1053695218781782037";
 
-    const rest = new REST({ version: '10' }).setToken(botConfig.token);
+    const rest = new REST({ version: '10' }).setToken(config[0].token);
 
     (async () => {
 	try {
@@ -81,4 +97,4 @@ client.on("interactionCreate", async interaction => {
     }
 });
 
-client.login(botConfig.token);
+client.login(config[0].token);
