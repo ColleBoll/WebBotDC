@@ -29,3 +29,9 @@ Make sure you are in de directory `/var/www/<your_website>/botData`.
 ```
 npm install discord.js
 ```
+
+4. Update permissions of your `/var/www/<your_website>`.
+```
+sudo chmod -R 755 /var/www/<your_website>
+sudo chown -R www-data:www-data /var/www/<your_website>
+```
