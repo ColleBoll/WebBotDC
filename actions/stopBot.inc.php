@@ -3,7 +3,7 @@
     try {
         exec('killall node');
 
-        header('Location: /');
+        header('Location: ../');
     } catch (\Throwable $th) {
         echo($th);
     }

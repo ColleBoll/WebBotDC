@@ -89,7 +89,7 @@ client.on("interactionCreate", async interaction => {
 
         } catch (err) {
             console.log(err)
-            await interaction.reply({ content: "Oei joei joei! Er ging iets fout!", ephemeral: true });
+            await interaction.reply({ content: "Something went wrong!", ephemeral: true });
         }
 
     } else {

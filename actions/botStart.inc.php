@@ -31,6 +31,8 @@
             exec('npm start --prefix botData/', $output, $return_var);
 
             echo(strval($output . " | Make sure your discord aplication token is valid!"));
+
+            header('Location: ../');
         }
 
     ?>
