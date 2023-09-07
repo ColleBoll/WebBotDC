@@ -23,10 +23,10 @@
     <button type="submit">Update Status</button>
   </form>
 
-  <form action="../actions/botStart.php">
+  <form action="../actions/botStart.inc.php">
     <button id="startButton">Start Bot</button>
   </form>
-  <form action="../actions/stopBot.php">
+  <form action="../actions/stopBot.inc.php">
     <button id="stopButton">Stop Bot</button>
   </form>
   <pre id="consoleOutput"></pre>
@@ -37,12 +37,16 @@
     const consoleOutput = document.getElementById('consoleOutput');
 
     startButton.addEventListener('click', () => {
-      header('Location: ../actions/botStart.php');
+      header('Location: ../actions/botStart.inc.php');
     });
 
     stopButton.addEventListener('click', () => {
-      header('Location: ../actions/stopBot.php');
+      header('Location: ../actions/stopBot.inc.php');
     });
   </script>
+
+  <ul>
+    <li><a href="testCommand.php">test-command</a></li>
+  </ul>
 </body>
 </html>

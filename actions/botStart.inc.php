@@ -12,13 +12,13 @@
     <title>Bot run</title>
 </head>
 <body>
-    <form action="stopBot.php">
+    <form action="stopBot.inc.php">
         <button id="stopButton">Stop Bot</button>
     </form>
 
     <?php
 
-        $json_Object = file_get_contents('botData/config.json');
+        $json_Object = file_get_contents('../botData/config.json');
         $jsonObj = json_decode($json_Object, true);
         $key_token = "token";
         $key_status = "status";
@@ -28,7 +28,7 @@
         if($token == "" || $status == ""){
             echo("Token or/and status is empty. Make sure you add a value to it.");
         }else{
-            exec('npm start --prefix botData/', $output, $return_var);
+            exec('npm start --prefix ../botData/', $output, $return_var);
 
             echo(strval($output . " | Make sure your discord aplication token is valid!"));
 

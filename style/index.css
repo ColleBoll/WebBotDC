@@ -1,0 +1,13 @@
+@font-face {
+    font-family: titel;
+    src: url(/style/font/RubikIso-Regular.ttf);
+}
+
+* {
+    margin: 100%;
+    background-color: yellow;
+}
+
+.piemol h1{
+    font-family: titel;
+}
