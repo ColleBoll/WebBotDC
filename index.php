@@ -6,9 +6,18 @@
     $setup = $jsonObj[0][$key];
 
     if($setup == true){
-        header("Location: /panel");
+        if(isset($_SESSION['username']) && isset($_SESSION['email'])){
+            header("Location: /panel");
+            exit;
+        }else{
+            header("Location: login");
+            exit;
+        }
     }else{
         header("Location: setup");
     }
+
+    echo("When you see this, there went something wrong
+    \nLatest ERROR message: " . $_SESSION['error_message']);
 
 ?>

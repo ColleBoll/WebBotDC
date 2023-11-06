@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION['username']) && !isset($_SESSION['email'])){
+        header("Location: ../");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

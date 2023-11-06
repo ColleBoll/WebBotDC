@@ -17,8 +17,6 @@
             $dbUsername = $_POST["dbusername"];
             $dbUserPassword = $_POST["dbuserpassword"];
 
-            echo "hoi 1";
-
             //database verbinding
             $dsn = "mysql:host=" . $dbHost . ";dbname=" . $dbName;
 
@@ -42,8 +40,6 @@
                 $stmt = null;
 
                 $_SESSION['succes_message'] = "Data input account succes!";
-
-                echo "hoi 3";
                 
             } catch (PDOException $e) {
                 $_SESSION['error_message'] = "ERROR: " . $e->getMessage();
@@ -63,7 +59,6 @@
                 $json_object = json_encode($data, JSON_PRETTY_PRINT);
                 file_put_contents('../config.json', $json_object);
 
-                echo "hoi 4";
             } catch (PDOException $e) {
                 echo("ERROR: " . $e);
             }
